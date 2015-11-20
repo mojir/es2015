@@ -1,0 +1,44 @@
+{
+
+    "camelcase": true,
+    "curly": true,
+    "immed": true,
+    "maxdepth": 10,
+    "maxlen": 160,
+    "maxparams": 10,
+    "maxstatements": 100,
+    "newcap": true,
+    "noarg": true,
+    "nonew": true,
+    "strict": true,
+    "undef": true,
+    "validthis": true,
+    "unused": true,
+    "nonbsp": true,
+    "esnext": true,
+
+
+    "globalstrict": true,
+    "boss": true,
+    "eqnull": true,
+    "es5": false,
+    "evil": true,
+    "expr": true,
+    "smarttabs": true,
+    "sub": true,
+
+
+    "node": true,
+    "devel": true,
+
+
+
+    "globals": {
+        "describe": false,
+        "it": false,
+        "before": false,
+        "beforeEach": false,
+		"afterEach": false,
+        "after": false
+    }
+}

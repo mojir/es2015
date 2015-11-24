@@ -13,7 +13,7 @@ const babel = require("gulp-babel");
 
 
 gulp.task("default", function (cb) {
-    glob("src/*", (err, files) => {
+    glob("src/tutorials/*", (err, files) => {
         const done = afterN(files.length, cb);
         files.forEach(dir => {
             let snippet = path.basename(dir);

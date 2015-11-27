@@ -15,7 +15,7 @@ const babel = require("gulp-babel");
 
 
 
-gulp.task("default", (cb) => {
+gulp.task("default", cb => {
     runSequence(
             "clean",
             "transform-js",
@@ -23,7 +23,7 @@ gulp.task("default", (cb) => {
             cb);
 });
 
-gulp.task("transform-js", cb => {
+gulp.task("transform-js", function (cb) {
     glob("src/tutorials/*", (err, files) => {
         const done = afterN(files.length, cb);
         files.forEach(dir => {
@@ -55,8 +55,8 @@ gulp.task("watch", ["default"], () => {
    });
 });
 
-gulp.task("clean", () => {
-    gulp.src("build", {read: false})
+gulp.task("clean", cb => {
+    return gulp.src("build", {read: false})
         .pipe(vinylPaths(del));
 });
 

@@ -1,6 +1,8 @@
-console.log("Example");
+console.log("Simple Example");
 
-const a = "Hej";
+let x = 1;
+let y = 2;
 
-const b = a + a;
-console.log(b);
+[x, y] = [y, x];
+
+console.log(x, y);

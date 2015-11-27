@@ -34,25 +34,24 @@ option {
     display: none;
 }
 
-.source {
-    margin-bottom: 40px;
-}
-
-.es2015 {
+.es2015, .generated-source, .output {
     background-color: #ffd;
     padding: 5px;
     border: 1px dashed #222;
-    margin-bottom: 50px;
+    margin-bottom: 25px;
 }
 
 h3 {
     margin-bottom: 0px;
 }
 
-.generated-source {
-    border: 1px dashed #222;
-    background-color: #ffd;
+
+.pre-output {
+    background-color: #222;
+    color: #eee;
     padding: 5px;
-    
 }
 
+.source-title {
+    margin-top: 30px;
+}

@@ -41,7 +41,7 @@ gulp.task("transform-js", cb => {
     });
 });
 
-gulp.task("build-html", cb => {
+gulp.task("build-html", (cb) => {
     buildHtml(cb);
 });
 

@@ -4,13 +4,32 @@ const handlebars = require("handlebars");
 const fs = require("fs");
 const tutorialsDir = __dirname + "/tutorials";
 const transpiledDir = __dirname + "/../build/tutorials";
+const templatesDir = __dirname + "/../web-assets";
+const publicDir = __dirname + "/../build/public";
 const afterN = require("./utils").afterN;
 const path = require("path");
 
 module.exports = cb => {
+    createPublicDir();
     const tutorials = getTutorials();
-    let data = {tutorials};
+    const data = {tutorials};
+    const templateSource = fs.readFileSync(path.join(templatesDir, "index.hbs"), "utf-8");
+    const template = handlebars.compile(templateSource);
+    const indexContent = template(data);
+    
+    fs.writeFileSync(path.join(publicDir, "index.html"), indexContent);
+    cb();
 };
+
+function createPublicDir() {
+    try {
+        fs.mkdirSync(publicDir);
+    } catch (e) {
+        if (e.code !== 'EEXIST') {
+            throw e;
+        }
+    }
+}
 
 
 function getTutorials() {

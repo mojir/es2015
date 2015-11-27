@@ -2,10 +2,107 @@
     <head>
         <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
         <link rel="stylesheet" href="sons-of-obsidian.css"></link>
+        <title>ES2015 tutorials</title>
     </head>
     <body>
-        <pre class="prettyprint lang-js">
-const x = 1;
-        </pre>
+        <div>
+            <h1>List</h1>
+            <ul>
+                <li>es6-modules</li>
+                <li>example</li>
+            </ul>
+        </div>
+        <div>
+            <div class="tutorial-header">es6-modules</div>
+            <div class="source">
+                <div class="source-title">index.js</div>
+                <div class="source">
+                    <pre class="prettyprint lang-js">&quot;use strict&quot;;
+console.log(&quot;ES6 modules&quot;);
+
+// Import all exports from module
+import * as math from &quot;./lib/math-utils&quot;;
+
+let x &#x3D; math.double(2); // -&gt; 4
+x &#x3D; math.tripple(x); // -&gt; 12
+console.log(&#x60;Now x is ${x}&#x60;);
+
+
+// Import specific export from module
+import {surroundWithStars as stars} from &quot;./lib/string-utils&quot;;
+
+console.log(stars(&quot;Albert with stars&quot;));
+
+
+// Import default from module
+import fibonacci from &quot;./lib/fib&quot;;
+console.log(&#x60;The 10th number in the fibonacci sequence is ${fibonacci(10)}&#x60;);
+</pre>
+                </div>
+            </div>
+            <div class="source">
+                <div class="source-title">lib/fib.js</div>
+                <div class="source">
+                    <pre class="prettyprint lang-js">export default function fib(n) {
+    if (n &lt;&#x3D; 0) {
+        return NaN;
+    }
+    if (n &lt;&#x3D; 2) {
+        return 1;
+    }
+    return fib(n - 1) + fib(n - 2);
+}
+</pre>
+                </div>
+            </div>
+            <div class="source">
+                <div class="source-title">lib/math-utils.js</div>
+                <div class="source">
+                    <pre class="prettyprint lang-js">// Export a function
+export function double(x) {
+    return 2 * x;
+}
+
+
+// Export another function
+function tripple(x) {
+    return 3 * x;
+}
+export {tripple};
+
+
+// Export a constant
+const PI &#x3D; 3.14159;
+export {PI};
+</pre>
+                </div>
+            </div>
+            <div class="source">
+                <div class="source-title">lib/string-utils.js</div>
+                <div class="source">
+                    <pre class="prettyprint lang-js">&quot;use strict&quot;;
+
+export function surroundWithDashes(str) {
+    return &#x60;---${str}---&#x60;;
+}
+
+export function surroundWithStars(str) {
+    return &#x60;***${str}***&#x60;;
+}
+</pre>
+                </div>
+            </div>
+            <div class="tutorial-header">example</div>
+            <div class="source">
+                <div class="source-title">index.js</div>
+                <div class="source">
+                    <pre class="prettyprint lang-js">console.log(&quot;Example 2&quot;);
+</pre>
+                </div>
+            </div>
+        </div>
+
     </body>
 </html>
+
+

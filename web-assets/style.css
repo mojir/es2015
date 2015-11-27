@@ -1,0 +1,44 @@
+body {
+    color: #222;
+    font-family: Arial;
+    margin: 0;
+}
+
+option {
+    font-family: "courier new";
+}
+
+#header {
+    text-align: center;
+    font-size: 18px;
+    padding: 4px;
+    border-bottom: 1px solid #aaa;
+}
+
+#content {
+    margin: 10px;
+}
+
+.tutorial {
+    background-color: #ffd;
+    margin-bottom: 100px;
+    padding-bottom: 50px;
+    border-bottom: 6px dashed #222;
+}
+
+.tutorial-header {
+    background-color: #222;
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+.source {
+    margin-left: 50px;
+}
+
+.sourcecode {
+    margin-left: 50px;
+}

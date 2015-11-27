@@ -1,1 +1,6 @@
-console.log("Example 2");
+console.log("Example");
+
+const a = "Hej";
+
+const b = a + a;
+console.log(b);

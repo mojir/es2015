@@ -20,15 +20,14 @@ option {
 }
 
 .tutorial {
-    background-color: #ffd;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
     padding-bottom: 50px;
-    border-bottom: 6px dashed #222;
 }
 
 .tutorial-header {
     background-color: #222;
     color: white;
+    padding-left: 8px;
 }
 
 .hidden {
@@ -36,9 +35,24 @@ option {
 }
 
 .source {
-    margin-left: 50px;
+    margin-bottom: 40px;
 }
 
-.sourcecode {
-    margin-left: 50px;
+.es2015 {
+    background-color: #ffd;
+    padding: 5px;
+    border: 1px dashed #222;
+    margin-bottom: 50px;
 }
+
+h3 {
+    margin-bottom: 0px;
+}
+
+.generated-source {
+    border: 1px dashed #222;
+    background-color: #ffd;
+    padding: 5px;
+    
+}
+

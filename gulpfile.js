@@ -8,7 +8,7 @@ const vinylPaths = require("vinyl-paths");
 const runSequence = require("run-sequence");
 const buildHtml = require("./src/build-html");
 const afterN = require("./src/utils").afterN;
-
+const watch = require("gulp-watch");
 
 const rollup = require("gulp-rollup");
 const babel = require("gulp-babel");
@@ -47,7 +47,12 @@ gulp.task("build-html", (cb) => {
 
 
 gulp.task("watch", ["default"], () => {
-   gulp.watch('src/**/*.js', ["default"]);
+   watch(['src/**/*.js'], () => {
+       gulp.start("default");
+   });
+   watch(['web-assets/**/*.hbs'], () => {
+       gulp.start("build-html");
+   });
 });
 
 gulp.task("clean", () => {

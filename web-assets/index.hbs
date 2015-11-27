@@ -21,14 +21,26 @@
                 {{#tutorials}}
                 <div class="tutorial" id="{{name}}">
                     <div class="tutorial-header"><h2>{{name}}</h2></div>
-                    {{#sources}}
-                    <div class="source">
-                        <div class="source-title"><h3>{{name}}</h3></div>
-                        <div class="sourcecode">
-                            <pre class="prettyprint lang-js linenums">{{content}}</pre>
+                    <div class="es2015">
+                        <h3>ES2015 source code</h3>
+                        {{#sources}}
+                        <div class="source">
+                            <div class="source-title"><h3>{{name}}</h3></div>
+                            <div class="sourcecode">
+                                <pre class="prettyprint lang-js linenums">{{content}}</pre>
+                            </div>
+                        </div>
+                        {{/sources}}
+                    </div>
+                    <div class="generated-source">
+                        <h3>Generated source code</h3>
+                        <div class="source">
+                            <div class="source-title"><h3>{{transpiledSource.name}}</h3></div>
+                            <div class="sourcecoude">
+                                <pre class="prettyprint lang-js linenums">{{transpiledSource.content}}</pre>
+                            </div>
                         </div>
                     </div>
-                    {{/sources}}
                 </div>
                 {{/tutorials}}
             </div>

@@ -6,7 +6,6 @@ const tutorialsDir = __dirname + "/tutorials";
 const transpiledDir = __dirname + "/../build/tutorials";
 const templatesDir = __dirname + "/../web-assets";
 const publicDir = __dirname + "/../build/public";
-const afterN = require("./utils").afterN;
 const path = require("path");
 
 module.exports = cb => {
@@ -69,7 +68,7 @@ function parseTutorial(tutorial, subPath, scripts) {
             return false;
         }
         return fs.lstatSync(path.join(dir, file)).isFile();
-    })
+    });
 
     jsFiles.map(jsFile => path.join(dir, jsFile)).forEach(jsFile => {
         const tutorial = {

@@ -4,6 +4,7 @@
   "description": "A es2015 workflow",
   "main": "src/index.js",
   "scripts": {
+    "start": "node src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -26,9 +27,11 @@
     "gulp": "^3.9.0",
     "gulp-babel": "^6.1.0",
     "gulp-rollup": "^1.4.0",
+    "gulp-watch": "^4.3.5",
     "handlebars": "^4.0.5",
     "run-sequence": "^1.1.5",
     "sorcery": "^0.8.0",
-    "vinyl-paths": "^2.1.0"
+    "vinyl-paths": "^2.1.0",
+    "yargs": "^3.30.0"
   }
 }

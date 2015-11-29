@@ -25,12 +25,11 @@
     "express": "^4.13.3",
     "glob": "^6.0.1",
     "gulp": "^3.9.0",
-    "gulp-babel": "^6.1.0",
+    "gulp-babel": "^6.1.1",
     "gulp-rollup": "^1.4.0",
     "gulp-watch": "^4.3.5",
     "handlebars": "^4.0.5",
     "run-sequence": "^1.1.5",
-    "sorcery": "^0.8.0",
     "vinyl-paths": "^2.1.0",
     "yargs": "^3.30.0"
   }

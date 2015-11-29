@@ -7,7 +7,7 @@ const transpiledDir = __dirname + "/../build/tutorials";
 const templatesDir = __dirname + "/../web-assets";
 const publicDir = __dirname + "/../build/public";
 const path = require("path");
-const child_process = require("child_process");
+const cp = require("child_process");
 
 module.exports = cb => {
     createPublicDir();
@@ -43,6 +43,9 @@ function getTutorials() {
         };
         tutorials.push(tutorial);
         parseTutorial(file, "", tutorial.sources);
+        if (tutorial.sources.length) {
+            tutorial.sources[0].index = true;
+        }
         tutorial.transpiledSource = getTranspiledSource(file);
         tutorial.output = getOutput(file);
     });
@@ -51,17 +54,18 @@ function getTutorials() {
 
 function getOutput(tutorial) {
     const file = path.join(transpiledDir, tutorial, "index.js");
-    return child_process.execFileSync("node", [file], {encoding: "utf8"});
+    return cp.execFileSync("node", [file], {encoding: "utf8"});
 }
 
 function getTranspiledSource(tutorial) {
     const dir = path.join(transpiledDir, tutorial);
-    const file = fs.readdirSync(dir)[0];
+    const fileName = "index.js";
+    const fullPath = path.join(dir, fileName);
     
     return {
-        path: path.join(dir, file),
-        name: file,
-        content: fs.readFileSync(path.join(dir, file), "utf-8")
+        path: fullPath,
+        name: fileName,
+        content: fs.readFileSync(fullPath, "utf-8")
     };
 }
 

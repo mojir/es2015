@@ -23,7 +23,7 @@ gulp.task("default", cb => {
             cb);
 });
 
-gulp.task("transform-js", function (cb) {
+gulp.task("transform-js", cb => {
     glob("src/tutorials/*", (err, files) => {
         const done = afterN(files.length, cb);
         files.forEach(dir => {
@@ -55,7 +55,7 @@ gulp.task("watch", ["default"], () => {
    });
 });
 
-gulp.task("clean", cb => {
+gulp.task("clean", () => {
     return gulp.src("build", {read: false})
         .pipe(vinylPaths(del));
 });

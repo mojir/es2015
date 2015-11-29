@@ -1,8 +1,26 @@
+/*jshint browser:true*/
+
 window.onload = function () {
     "use strict";
     var selector = document.getElementById("selector");
     selector.onchange = selectTutotial;
+
+    var elements = document.getElementsByClassName("source-title");
+    elements = [].slice.call(elements);
+    elements.forEach(function (elem) {
+        elem.onclick = sourceTitleClicked;
+    });
 };
+
+function sourceTitleClicked() {
+    "use strict";
+    var classList = this.nextElementSibling.classList;
+    if (classList.contains("hidden")) {
+        classList.remove("hidden");
+    } else {
+        classList.add("hidden");
+    }
+}
 
 function selectTutotial() {
     "use strict";

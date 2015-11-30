@@ -2,7 +2,7 @@
 
 const handlebars = require("handlebars");
 const fs = require("fs");
-const tutorialsDir = __dirname + "/tutorials";
+const tutorialsDir = __dirname + "/../tutorials";
 const transpiledDir = __dirname + "/../build/tutorials";
 const templatesDir = __dirname + "/../web-assets";
 const publicDir = __dirname + "/../build/public";

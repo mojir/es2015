@@ -10,7 +10,7 @@ server.use(express.static(__dirname + "/../build/public"));
 
 const instance = server.listen(argv.port, () => {
     
-    console.log(`Listening on port ${instance.address().port}`);
+    console.log(`Listening on port: ${instance.address().port}`);
 });
 
 

@@ -11,10 +11,7 @@ const afterN = require("./src/utils").afterN;
 const watch = require("gulp-watch");
 const nodemon = require("gulp-nodemon");
 const browserSync = require("browser-sync");
-
-const rollup = require("gulp-rollup");
-const webpack = require("gulp-webpack");
-const babel = require("gulp-babel");
+const webpack = require("webpack-stream");
 
 gulp.task("default", cb => {
     runSequence(
@@ -48,10 +45,6 @@ gulp.task("transform-js", cb => {
                         ]
                     }
                 }))
-                //.pipe(babel({
-                    //presets: ["es2015"],
-                    //plugins: ["transform-runtime"]
-                //}))
                 .pipe(gulp.dest(path.join("build/tutorials", snippet)))
                 .on('end', done);
         });

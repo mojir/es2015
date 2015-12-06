@@ -1,9 +1,9 @@
 "use strict";
 
-export function surroundWithDashes(str) {
+exports.surroundWithDashes =  function surroundWithDashes(str) {
     return `---${str}---`;
-}
+};
 
-export function surroundWithStars(str) {
+exports.surroundWithStars =function surroundWithStars(str) {
     return `***${str}***`;
-}
+};

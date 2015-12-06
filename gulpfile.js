@@ -13,6 +13,7 @@ const nodemon = require("gulp-nodemon");
 const browserSync = require("browser-sync");
 
 const rollup = require("gulp-rollup");
+const webpack = require("gulp-webpack");
 const babel = require("gulp-babel");
 
 gulp.task("default", cb => {
@@ -29,12 +30,28 @@ gulp.task("transform-js", cb => {
         files.forEach(dir => {
             let snippet = path.basename(dir);
             let index = path.join(dir, "index.js");
-            gulp.src(index, {read: false})
-                .pipe(rollup())
-                .pipe(babel({
-                    presets: ["es2015"],
-                    plugins: ["transform-runtime"]
+            gulp.src(index)
+                .pipe(webpack({
+                    output: {
+                        filename: "index.js"
+                    },
+                    module: {
+                        loaders: [
+                            {
+                                exclude: /node_modules/,
+                                loader: "babel",
+                                query: {
+                                    presets: ["es2015"],
+                                    plugins: ["transform-runtime"]
+                                }
+                            }
+                        ]
+                    }
                 }))
+                //.pipe(babel({
+                    //presets: ["es2015"],
+                    //plugins: ["transform-runtime"]
+                //}))
                 .pipe(gulp.dest(path.join("build/tutorials", snippet)))
                 .on('end', done);
         });
